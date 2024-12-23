@@ -7,30 +7,39 @@ public class InputsGame : MonoBehaviour
 
 
 
-    public bool BlockKeyP = false;
-    public bool BlockKeyF = false;
-    public bool BlockKeyQ = false;
-    public bool BlockKeyE = false;
-    public bool BlockDir = false;
-    private bool Block_ = false;
-    private bool BlockM = false;
+
+    private bool BlockHab = false;
+    private bool BlockDir = false;
+    private bool BlockMove = false;
+    private bool BlockAction = false;
+    private bool BlockMenu = false;
 
 
 
-    public void BlockFalseEQF()
-    {
-        BlockKeyE = false;
-        BlockKeyQ = false;
-        BlockKeyF = false;
-    }
 
-    public void BlockDir_()
+
+    public void LiberarMove()
     {
         BlockDir = false;
-        Block_ = false;
+        BlockMove = false;
     }
 
+    public void BloquearMove()
+    {
+        BlockDir = true;
+        BlockMove = true;
+    }
 
+    public void LiberarHab()
+    {
+        BlockHab = false;
+  
+    }
+
+    public void BloquearHab()
+    {
+        BlockHab = true;
+    }
 
 
     private void Start()
@@ -57,7 +66,7 @@ public class InputsGame : MonoBehaviour
 
         try
         {
-            if (Block_ == false)
+            if (BlockMove == false)
             {
                 Vector3 moveInput = InpAct.PlayerAction.Movement.ReadValue<Vector2>();
                 return moveInput;
@@ -78,7 +87,7 @@ public class InputsGame : MonoBehaviour
     {
         try
       { 
-        if (BlockM == false)
+        if (BlockMenu == false)
         {
             bool botao = InpAct.PlayerAction.Menu.triggered;
             return botao;
@@ -92,15 +101,15 @@ public class InputsGame : MonoBehaviour
     }
 
 
-    public bool ButtonInteract()
+    public bool ButtonTransform()
     {
         try
         { 
-        if (BlockKeyE == false)
+        if (BlockHab == false)
 
         {
-            bool botao = InpAct.PlayerAction.Interact.triggered;
-            return botao;
+            bool botao = InpAct.PlayerAction.Hab1.IsPressed();
+                return botao;
 
         }
         return false;
@@ -111,14 +120,51 @@ public class InputsGame : MonoBehaviour
         }
     }
 
-    public bool ButtonPower()
+    public bool ButtonVoices()
     {
         try
         {
-            if (BlockKeyP == false)
+            if (BlockHab == false)
 
             {
-                bool botao = InpAct.PlayerAction.Power.triggered;
+                bool botao = InpAct.PlayerAction.Hab2.IsPressed();
+                return botao;
+
+            }
+            return false;
+        }
+        catch
+        {
+            return false;
+        }
+    }
+
+    public bool ButtonHypnotize()
+    {
+        try
+        {
+            if (BlockHab == false)
+            {
+                bool botao = InpAct.PlayerAction.Hab3.IsPressed();
+                return botao;
+
+            }
+            return false;
+        }
+        catch
+        {
+            return false;
+        }
+    }
+
+    public bool ButtonAction()
+    {
+        try
+        {
+            if (BlockAction == false)
+
+            {
+                bool botao = InpAct.PlayerAction.Action.triggered;
                 return botao;
 
             }

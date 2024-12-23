@@ -15,9 +15,36 @@
                     "initialStateCheck": true
                 },
                 {
-                    "name": "Interact",
+                    "name": "Hab1",
                     "type": "Button",
                     "id": "e34b670c-0ca1-42df-87e9-7bde887613b6",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Hab2",
+                    "type": "Button",
+                    "id": "60fcefd7-acb6-4630-99f2-b25451646dbf",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Hab3",
+                    "type": "Button",
+                    "id": "1ad027c1-ab3a-4c56-b0cf-3731f8772681",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Action",
+                    "type": "Button",
+                    "id": "53f204da-c2f9-4a29-845f-5b9aef63d3eb",
                     "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
@@ -54,24 +81,6 @@
                     "name": "Down",
                     "type": "Button",
                     "id": "9c575fec-7346-4fa4-aeeb-88f608bea336",
-                    "expectedControlType": "",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
-                    "name": "Power",
-                    "type": "Button",
-                    "id": "60fcefd7-acb6-4630-99f2-b25451646dbf",
-                    "expectedControlType": "",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
-                    "name": "Action",
-                    "type": "Button",
-                    "id": "53f204da-c2f9-4a29-845f-5b9aef63d3eb",
                     "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
@@ -141,7 +150,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Interact",
+                    "action": "Hab1",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -207,7 +216,18 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Power",
+                    "action": "Hab2",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "a0a004b5-844c-42f6-89b4-cd06443d9e59",
+                    "path": "<Keyboard>/ctrl",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Hab3",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

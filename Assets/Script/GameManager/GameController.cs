@@ -1,6 +1,7 @@
 using Fungus;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Cinemachine;
 using UnityEngine;
 
 public class GameController : MonoBehaviour
@@ -13,7 +14,6 @@ public class GameController : MonoBehaviour
 
 
 
- 
 
     void Awake()
     {
@@ -33,10 +33,13 @@ public class GameController : MonoBehaviour
 
     private void Start()
     {
-      
+
         GameEvents.Instance.OnMenu += Pause;
-       
+    
     }
+
+    [System.Obsolete]
+
     private struct Variables
     {
 

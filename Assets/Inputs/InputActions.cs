@@ -37,9 +37,36 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": true
                 },
                 {
-                    ""name"": ""Interact"",
+                    ""name"": ""Hab1"",
                     ""type"": ""Button"",
                     ""id"": ""e34b670c-0ca1-42df-87e9-7bde887613b6"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Hab2"",
+                    ""type"": ""Button"",
+                    ""id"": ""60fcefd7-acb6-4630-99f2-b25451646dbf"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Hab3"",
+                    ""type"": ""Button"",
+                    ""id"": ""1ad027c1-ab3a-4c56-b0cf-3731f8772681"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Action"",
+                    ""type"": ""Button"",
+                    ""id"": ""53f204da-c2f9-4a29-845f-5b9aef63d3eb"",
                     ""expectedControlType"": """",
                     ""processors"": """",
                     ""interactions"": """",
@@ -76,24 +103,6 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
                     ""name"": ""Down"",
                     ""type"": ""Button"",
                     ""id"": ""9c575fec-7346-4fa4-aeeb-88f608bea336"",
-                    ""expectedControlType"": """",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                },
-                {
-                    ""name"": ""Power"",
-                    ""type"": ""Button"",
-                    ""id"": ""60fcefd7-acb6-4630-99f2-b25451646dbf"",
-                    ""expectedControlType"": """",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                },
-                {
-                    ""name"": ""Action"",
-                    ""type"": ""Button"",
-                    ""id"": ""53f204da-c2f9-4a29-845f-5b9aef63d3eb"",
                     ""expectedControlType"": """",
                     ""processors"": """",
                     ""interactions"": """",
@@ -163,7 +172,7 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Interact"",
+                    ""action"": ""Hab1"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -229,7 +238,18 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Power"",
+                    ""action"": ""Hab2"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""a0a004b5-844c-42f6-89b4-cd06443d9e59"",
+                    ""path"": ""<Keyboard>/ctrl"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Hab3"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -241,13 +261,14 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
         // PlayerAction
         m_PlayerAction = asset.FindActionMap("PlayerAction", throwIfNotFound: true);
         m_PlayerAction_Movement = m_PlayerAction.FindAction("Movement", throwIfNotFound: true);
-        m_PlayerAction_Interact = m_PlayerAction.FindAction("Interact", throwIfNotFound: true);
+        m_PlayerAction_Hab1 = m_PlayerAction.FindAction("Hab1", throwIfNotFound: true);
+        m_PlayerAction_Hab2 = m_PlayerAction.FindAction("Hab2", throwIfNotFound: true);
+        m_PlayerAction_Hab3 = m_PlayerAction.FindAction("Hab3", throwIfNotFound: true);
+        m_PlayerAction_Action = m_PlayerAction.FindAction("Action", throwIfNotFound: true);
         m_PlayerAction_Menu = m_PlayerAction.FindAction("Menu", throwIfNotFound: true);
         m_PlayerAction_Cancel = m_PlayerAction.FindAction("Cancel", throwIfNotFound: true);
         m_PlayerAction_Up = m_PlayerAction.FindAction("Up", throwIfNotFound: true);
         m_PlayerAction_Down = m_PlayerAction.FindAction("Down", throwIfNotFound: true);
-        m_PlayerAction_Power = m_PlayerAction.FindAction("Power", throwIfNotFound: true);
-        m_PlayerAction_Action = m_PlayerAction.FindAction("Action", throwIfNotFound: true);
     }
 
     ~@InputActions()
@@ -315,25 +336,27 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
     private readonly InputActionMap m_PlayerAction;
     private List<IPlayerActionActions> m_PlayerActionActionsCallbackInterfaces = new List<IPlayerActionActions>();
     private readonly InputAction m_PlayerAction_Movement;
-    private readonly InputAction m_PlayerAction_Interact;
+    private readonly InputAction m_PlayerAction_Hab1;
+    private readonly InputAction m_PlayerAction_Hab2;
+    private readonly InputAction m_PlayerAction_Hab3;
+    private readonly InputAction m_PlayerAction_Action;
     private readonly InputAction m_PlayerAction_Menu;
     private readonly InputAction m_PlayerAction_Cancel;
     private readonly InputAction m_PlayerAction_Up;
     private readonly InputAction m_PlayerAction_Down;
-    private readonly InputAction m_PlayerAction_Power;
-    private readonly InputAction m_PlayerAction_Action;
     public struct PlayerActionActions
     {
         private @InputActions m_Wrapper;
         public PlayerActionActions(@InputActions wrapper) { m_Wrapper = wrapper; }
         public InputAction @Movement => m_Wrapper.m_PlayerAction_Movement;
-        public InputAction @Interact => m_Wrapper.m_PlayerAction_Interact;
+        public InputAction @Hab1 => m_Wrapper.m_PlayerAction_Hab1;
+        public InputAction @Hab2 => m_Wrapper.m_PlayerAction_Hab2;
+        public InputAction @Hab3 => m_Wrapper.m_PlayerAction_Hab3;
+        public InputAction @Action => m_Wrapper.m_PlayerAction_Action;
         public InputAction @Menu => m_Wrapper.m_PlayerAction_Menu;
         public InputAction @Cancel => m_Wrapper.m_PlayerAction_Cancel;
         public InputAction @Up => m_Wrapper.m_PlayerAction_Up;
         public InputAction @Down => m_Wrapper.m_PlayerAction_Down;
-        public InputAction @Power => m_Wrapper.m_PlayerAction_Power;
-        public InputAction @Action => m_Wrapper.m_PlayerAction_Action;
         public InputActionMap Get() { return m_Wrapper.m_PlayerAction; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -346,9 +369,18 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
             @Movement.started += instance.OnMovement;
             @Movement.performed += instance.OnMovement;
             @Movement.canceled += instance.OnMovement;
-            @Interact.started += instance.OnInteract;
-            @Interact.performed += instance.OnInteract;
-            @Interact.canceled += instance.OnInteract;
+            @Hab1.started += instance.OnHab1;
+            @Hab1.performed += instance.OnHab1;
+            @Hab1.canceled += instance.OnHab1;
+            @Hab2.started += instance.OnHab2;
+            @Hab2.performed += instance.OnHab2;
+            @Hab2.canceled += instance.OnHab2;
+            @Hab3.started += instance.OnHab3;
+            @Hab3.performed += instance.OnHab3;
+            @Hab3.canceled += instance.OnHab3;
+            @Action.started += instance.OnAction;
+            @Action.performed += instance.OnAction;
+            @Action.canceled += instance.OnAction;
             @Menu.started += instance.OnMenu;
             @Menu.performed += instance.OnMenu;
             @Menu.canceled += instance.OnMenu;
@@ -361,12 +393,6 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
             @Down.started += instance.OnDown;
             @Down.performed += instance.OnDown;
             @Down.canceled += instance.OnDown;
-            @Power.started += instance.OnPower;
-            @Power.performed += instance.OnPower;
-            @Power.canceled += instance.OnPower;
-            @Action.started += instance.OnAction;
-            @Action.performed += instance.OnAction;
-            @Action.canceled += instance.OnAction;
         }
 
         private void UnregisterCallbacks(IPlayerActionActions instance)
@@ -374,9 +400,18 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
             @Movement.started -= instance.OnMovement;
             @Movement.performed -= instance.OnMovement;
             @Movement.canceled -= instance.OnMovement;
-            @Interact.started -= instance.OnInteract;
-            @Interact.performed -= instance.OnInteract;
-            @Interact.canceled -= instance.OnInteract;
+            @Hab1.started -= instance.OnHab1;
+            @Hab1.performed -= instance.OnHab1;
+            @Hab1.canceled -= instance.OnHab1;
+            @Hab2.started -= instance.OnHab2;
+            @Hab2.performed -= instance.OnHab2;
+            @Hab2.canceled -= instance.OnHab2;
+            @Hab3.started -= instance.OnHab3;
+            @Hab3.performed -= instance.OnHab3;
+            @Hab3.canceled -= instance.OnHab3;
+            @Action.started -= instance.OnAction;
+            @Action.performed -= instance.OnAction;
+            @Action.canceled -= instance.OnAction;
             @Menu.started -= instance.OnMenu;
             @Menu.performed -= instance.OnMenu;
             @Menu.canceled -= instance.OnMenu;
@@ -389,12 +424,6 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
             @Down.started -= instance.OnDown;
             @Down.performed -= instance.OnDown;
             @Down.canceled -= instance.OnDown;
-            @Power.started -= instance.OnPower;
-            @Power.performed -= instance.OnPower;
-            @Power.canceled -= instance.OnPower;
-            @Action.started -= instance.OnAction;
-            @Action.performed -= instance.OnAction;
-            @Action.canceled -= instance.OnAction;
         }
 
         public void RemoveCallbacks(IPlayerActionActions instance)
@@ -415,12 +444,13 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
     public interface IPlayerActionActions
     {
         void OnMovement(InputAction.CallbackContext context);
-        void OnInteract(InputAction.CallbackContext context);
+        void OnHab1(InputAction.CallbackContext context);
+        void OnHab2(InputAction.CallbackContext context);
+        void OnHab3(InputAction.CallbackContext context);
+        void OnAction(InputAction.CallbackContext context);
         void OnMenu(InputAction.CallbackContext context);
         void OnCancel(InputAction.CallbackContext context);
         void OnUp(InputAction.CallbackContext context);
         void OnDown(InputAction.CallbackContext context);
-        void OnPower(InputAction.CallbackContext context);
-        void OnAction(InputAction.CallbackContext context);
     }
 }

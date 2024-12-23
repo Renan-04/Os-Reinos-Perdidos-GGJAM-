@@ -7,6 +7,8 @@ TagManager:
   - Laser
   - Enemy
   - Companions
+  - Animal
+  - King
   layers:
   - Default
   - TransparentFX
